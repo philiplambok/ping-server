@@ -17,5 +17,5 @@
 3. Test the container
 
   ```sh
-  curl http://localhost:3000/ping
+  curl http://localhost:3000/
   ```
