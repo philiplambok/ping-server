@@ -1,61 +1,58 @@
-# ping-server
+# Ping Server
 
-It's an simple HTTP server to return a "pong" message.
+A simple HTTP server that responds with "pong" when you ping it.
 
-## Running the server in local via Docker
+## Getting Started Locally
 
-1. Create the Docker image from Dockerfile
+### What You'll Need:
+- Docker installed on your computer
 
-```sh
-$ docker build -t ping-server .
-```
+### Steps:
 
-2. Run the Docker container based on the image with the name ping-server
+1. **Build the Docker image:**
+   ```
+   docker build -t ping-server .
+   ```
 
-```sh
-$ docker run -d -p 3000:3000 --name ping-server ping-server
-```
+2. **Start the server:**
+   ```
+   docker run -d -p 3000:3000 --name ping-server ping-server
+   ```
 
-3. Test the application
+3. **Test it works:**
+   ```
+   curl http://localhost:3000
+   ```
+   You should see: `pong`
 
-```
-$ curl http://localhost:3000
-pong
-```
+## Deploying to a Server
 
-## Deploy the application in linux server
+### From Your Computer:
 
-### From local
+1. **Create a version that works on Linux servers:**
+   ```
+   docker build --platform linux/amd64 -t yourname/ping-server .
+   ```
 
-1. Create the Docker image for linux
+2. **Share it online:**
+   ```
+   docker push yourname/ping-server
+   ```
 
-```sh
-$ docker build --platform linux/amd64 -t philiplambok/ping-server .
-```
+### On Your Server:
 
-2. Push the Docker image to Docker Hub
+1. **Download the image:**
+   ```
+   docker pull yourname/ping-server
+   ```
 
-```sh
-$ docker push philiplambok/ping-server
-```
+2. **Start the server:**
+   ```
+   docker run -d -p 3000:3000 --name ping-server yourname/ping-server
+   ```
 
-### From server
-
-1. Pull the Docker image from Docker Hub
-
-```sh
-$ docker pull philiplambok/ping-server
-```
-
-2. Run the Docker container based on the image with the name ping-server
-
-```sh
-$ docker run -d -p 3000:3000 --name ping-server philiplambok/ping-server
-```
-
-3. Test the application
-
-```
-$ curl http://philiplambok.com
-pong
-```
+3. **Test it works:**
+   ```
+   curl http://your-server-address
+   ```
+   You should see: `pong`
