@@ -52,3 +52,10 @@ $ docker pull philiplambok/ping-server
 ```sh
 $ docker run -d -p 3000:3000 --name ping-server philiplambok/ping-server
 ```
+
+3. Test the application
+
+```
+$ curl http://philiplambok.com
+pong
+```
