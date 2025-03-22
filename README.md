@@ -1,19 +1,21 @@
-# Ping Server
+# ping-server
 
-## Build Docker image
+## How to run with Docker
 
-```sh
-$ docker build -t ping-server .
-```
+1. Build the image
 
-## Run Docker container
+  ```sh
+  docker build -t ping-server .
+  ```
 
-```sh
-$ docker run -p 300:3000 ping-server
-```
+2. Run the container
 
-## Test Docker container
+  ```sh
+  docker run -p 3000:3000 ping-server
+  ```
 
-```sh
-$ curl http://localhost:3000/ping
-```
+3. Test the container
+
+  ```sh
+  curl http://localhost:3000/ping
+  ```
