@@ -10,10 +10,10 @@ It's an simple HTTP server to return a "pong" message.
 $ docker build -t ping-server .
 ```
 
-2. Run the Docker container based on the image
+2. Run the Docker container based on the image with the name ping-server
 
 ```sh
-$ docker run -p 8080:8080 ping-server
+$ docker run -d -p 3000:3000 --name ping-server ping-server
 ```
 
 3. Test the application
