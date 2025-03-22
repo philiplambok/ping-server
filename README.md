@@ -11,7 +11,7 @@
 2. Run the container
 
   ```sh
-  docker run -d -p 3000:3000 ping-server -d
+  docker run -d -p 3000:3000 ping-server
   ```
 
 3. Test the container
