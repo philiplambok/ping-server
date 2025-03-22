@@ -1,40 +1,24 @@
 # ping-server
 
-## How to run with Docker
+It's an simple HTTP server to return a "pong" message.
 
-1. Build the image
+## Running the server in local via Docker
 
-  ```sh
-  docker build -t philiplambok/ping-server .
-  ```
+1. Create the Docker image from Dockerfile
 
-2. Run the container
+```sh
+$ docker build -t ping-server .
+```
 
-  ```sh
-  docker run -d -p 3000:3000 philiplambok/ping-server
-  ```
+2. Run the Docker container based on the image
 
-3. Test the container
+```sh
+$ docker run -p 8080:8080 ping-server
+```
 
-  ```sh
-  curl http://localhost:3000/
-  ```
+3. Test the application
 
-4. Stop the container
-
-  ```sh
-  docker stop ping-server
-  ```
-
-5. Upload the image to Docker Hub with version tag
-
-  ```sh
-  docker push philiplambok/ping-server
-  ```
-
-6. In production server, SSH into the server and run the following commands:
-
-  ```sh
-  docker pull philiplambok/ping-server
-  docker run -d --name ping-server -p 3000:3000 philiplambok/ping-server
-  ```
+```
+$ curl http://localhost:8080
+pong
+```
